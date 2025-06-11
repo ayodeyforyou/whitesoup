@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXPOSEE</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Top Info Bar -->
+    <div class="top-info-bar">
+      <p>Discover your dream property with Exposee</p>
+      <div class="dropdowns">
+        <select name="language" id="language">
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="es">Spanish</option>
+          <option value="yo">Yoruba</option>
+          <option value="ig">Igbo</option>
+        </select>
+        <select name="currency" id="currency">
+          <option value="usd">USD</option>
+          <option value="eur">EUR</option>
+          <option value="gbp">GBP</option>
+          <option value="ngn">NGN</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">EXPOSEE</div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#properties">Properties</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="hamburger">
+        <i class="bx bx-menu"></i>
+      </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Discover Your Dream Property With Exposee</h1>
+        <p>
+          This exclusive elite residential complex offers 13 living units with
+          carefully designed and optimally tailored floor plans.
+        </p>
+        <div class="hero-buttons">
+          <button class="cta-btn">Browse Properties</button>
+          <button class="cta-btn">Learn More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Properties Section -->
+    <section id="properties" class="featured-properties">
+      <h2>Featured Properties</h2>
+      <div class="property-grid">
+        <div class="property-card">
+          <img src="image.jpg" alt="Property 1" />
+          <h3>Luxury Villa</h3>
+          <p>4 Beds, 3 Baths, 2,500 sqft</p>
+          <p class="price">$1,200,000</p>
+          <button class="cta-btn">View Details</button>
+        </div>
+        <div class="property-card">
+          <img src="image (1).jpg" alt="Property 2" />
+          <h3>Modern Apartment</h3>
+          <p>2 Beds, 2 Baths, 1,200 sqft</p>
+          <p class="price">$850,000</p>
+          <button class="cta-btn">View Details</button>
+        </div>
+        <div class="property-card">
+          <img src="image.jpg" alt="Property 3" />
+          <h3>Cozy Condo</h3>
+          <p>1 Bed, 1 Bath, 800 sqft</p>
+          <p class="price">$450,000</p>
+          <button class="cta-btn">View Details</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about-content">
+        <img src="MG_9957.JPG" alt="About Us" />
+        <div class="about-text">
+          <h2>About Us</h2>
+          <p>
+            At EXPOSEE, we believe architectural beauty is about confidence. Our
+            homes are planned and built with care to enhance your natural
+            expectations, thrills, and empower you to feel your best every day.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <img src="IMG_4403.JPG" alt="About Us" />
+        <div class="about-text">
+          <h2>Our Vision</h2>
+          <p>
+            We aim to redefine luxury living by combining modern architecture
+            with timeless elegance, ensuring every home is a masterpiece.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <i class="bx bx-home"></i>
+          <h3>Property Sales</h3>
+          <p>We help you find the perfect property to buy or sell.</p>
+        </div>
+        <div class="service-card">
+          <i class="bx bx-building"></i>
+          <h3>Property Management</h3>
+          <p>Professional management services for your properties.</p>
+        </div>
+        <div class="service-card">
+          <i class="bx bx-money"></i>
+          <h3>Mortgage Assistance</h3>
+          <p>Get expert advice on financing your dream home.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>"Exposee made buying my first home a breeze. Highly recommend!"</p>
+          <h4>- Jane Doe</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>
+            "Their team is professional and knowledgeable. Great experience!"
+          </p>
+          <h4>- John Smith</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"I found my dream property thanks to Exposee. Thank you!"</p>
+          <h4>- Emily Johnson</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="cta-btn">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#properties">Properties</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-instagram"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+      </div>
+      <p>&copy; 2025 Exposee. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

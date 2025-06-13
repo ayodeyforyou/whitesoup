@@ -23,32 +23,6 @@ links.forEach((link) => {
   });
 });
 
-// Form Validation for Contact Form
-const contactForm = document.querySelector(".contact-form");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const name = contactForm.querySelector('input[placeholder="Your Name"]');
-    const email = contactForm.querySelector('input[placeholder="Your Email"]');
-    const message = contactForm.querySelector("textarea");
-
-    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
-      alert("Please fill out all fields.");
-      return;
-    }
-
-    if (!validateEmail(email.value)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-
-    alert("Thank you for your message! We'll get back to you soon.");
-    contactForm.reset();
-  });
-}
-
 // Email Validation Function
 function validateEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -68,3 +42,34 @@ if (languageDropdown && currencyDropdown) {
     console.log(`Currency selected: ${currencyDropdown.value}`);
   });
 }
+
+// Contact form backend integration
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const name = form.elements['name'].value;
+      const email = form.elements['email'].value;
+      const message = form.elements['message'].value;
+      const statusDiv = document.getElementById('form-status');
+      statusDiv.textContent = 'Sending...';
+      try {
+        const response = await fetch('https://exposee-backend.onrender.com/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          statusDiv.textContent = data.message;
+          form.reset();
+        } else {
+          statusDiv.textContent = data.error || 'Failed to send message.';
+        }
+      } catch (err) {
+        statusDiv.textContent = 'Failed to send message. Please try again later.';
+      }
+    });
+  }
+});

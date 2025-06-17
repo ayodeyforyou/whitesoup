@@ -11,6 +11,8 @@ app.use(cors({
     'http://127.0.0.1:5500',
     'http://localhost:5500',
     'https://exposee-backend.onrender.com',
+    'https://ayodeyforyou.github.io',
+    'https://ayodeyforyou.github.io/',
     'https://ayodeyforyou.github.io/whitesoup',
     'https://ayodeyforyou.github.io/whitesoup/' // with trailing slash
     // Add your custom domain here if you use one, e.g.:

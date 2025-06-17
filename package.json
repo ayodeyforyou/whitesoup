@@ -1,0 +1,21 @@
+{
+  "name": "exposee-backend",
+  "version": "1.0.0",
+  "description": "Backend for Exposee real estate website (contact form email integration)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.13",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": ["express", "nodemailer", "contact", "backend", "real estate"],
+  "author": "Exposee",
+  "license": "MIT"
+}

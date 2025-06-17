@@ -44,16 +44,30 @@ if (languageDropdown && currencyDropdown) {
 }
 
 // Contact form backend integration
+// Enhanced: disable button while sending, show error for invalid email, clear on success
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('contact-submit');
   if (form) {
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
-      const name = form.elements['name'].value;
-      const email = form.elements['email'].value;
-      const message = form.elements['message'].value;
+      const name = form.elements['name'].value.trim();
+      const email = form.elements['email'].value.trim();
+      const message = form.elements['message'].value.trim();
       const statusDiv = document.getElementById('form-status');
-      statusDiv.textContent = 'Sending...';
+      statusDiv.textContent = '';
+      // Basic validation
+      if (!name || !email || !message) {
+        statusDiv.textContent = 'Please fill in all fields.';
+        return;
+      }
+      if (!validateEmail(email)) {
+        statusDiv.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
       try {
         const response = await fetch('https://exposee-backend.onrender.com/contact', {
           method: 'POST',
@@ -70,6 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
       } catch (err) {
         statusDiv.textContent = 'Failed to send message. Please try again later.';
       }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
     });
   }
 });

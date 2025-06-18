@@ -5,7 +5,6 @@ require('dotenv').config(); // Add this line at the top after imports
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
 app.use(cors({
   origin: [
     'http://127.0.0.1:5500',
@@ -20,6 +19,7 @@ app.use(cors({
     // 'https://yourdomain.com/'
   ]
 }));
+app.use(express.json());
 
 // Update these with your email and app password
 const transporter = nodemailer.createTransport({
@@ -44,6 +44,7 @@ app.post('/contact', async (req, res) => {
     });
     res.status(200).json({ message: 'Message sent successfully!' });
   } catch (error) {
+    console.error(error); // Log the error for debugging
     res.status(500).json({ error: 'Failed to send message.' });
   }
 });

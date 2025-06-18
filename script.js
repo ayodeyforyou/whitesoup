@@ -89,3 +89,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// Global Loader Utility
+function showGlobalLoader(show = true) {
+  const loader = document.getElementById('global-loader');
+  if (loader) {
+    loader.style.display = show ? 'flex' : 'none';
+    loader.setAttribute('aria-busy', show ? 'true' : 'false');
+  }
+}
+
+// Example usage: showGlobalLoader(true); // to show, showGlobalLoader(false); // to hide
+
+// Optionally, you can show the loader on navigation or AJAX events as needed.
